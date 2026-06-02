@@ -1,6 +1,7 @@
 try:
     import pandas as pd
     import streamlit as st
+    import openpyxl
 except ImportError as e:
     print(f'Error: {e}')
 
