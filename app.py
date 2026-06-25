@@ -48,7 +48,7 @@ try:
                 'Vehicle Number',
                 'Zone',
                 'Vehicle Category',
-                'Marching Out In Timings'
+                ' Out In Timings'
             ]
                 
         ]
@@ -66,7 +66,7 @@ try:
 
         less_30 = df[df['count']<=30]
 
-        less_30 = less_30[['Kpi Date','Vehicle Number','Vehicle Category' ,'Marching Out In Timings','Zone','Facility','count','Technician']]
+        less_30 = less_30[['Kpi Date','Vehicle Number','Vehicle Category' ,'Marching In Out Timings','Zone','Facility','count','Technician']]
 
 
         unique_vehicle = (
@@ -98,7 +98,7 @@ try:
         
         #less all Vehicle List
         r = df.drop_duplicates(subset=['Vehicle Number']).reset_index(drop=True)
-        r = r[['Kpi Date','Vehicle Number','Vehicle Category' ,'Marching Out In Timings','Zone','Facility','count','Technician']]
+        r = r[['Kpi Date','Vehicle Number','Vehicle Category' ,'Marching In Out Timings','Zone','Facility','count','Technician']]
         r.sort_values(by=['Facility','count'],inplace=True)
         r.index = range(1,len(r)+1)
         compliance = round(
